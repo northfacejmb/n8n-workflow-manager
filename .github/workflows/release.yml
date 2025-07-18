@@ -8,13 +8,16 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+      pull-requests: write
+      packages: write
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN || github.token }}
           fetch-depth: 0
 
       - name: Setup Node.js
