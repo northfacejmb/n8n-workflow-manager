@@ -38,7 +38,7 @@ npx n8n-workflow-manager types
 
 ## 📖 What is n8n-workflow-manager?
 
-![n8n Workflow Manager Demo](./images/demo-screenshot.png)
+![Split nodes into their own files](./images/Split%20nodes%20into%20their%20own%20files.png)
 *Example: Splitting an n8n workflow into organized files*
 
 n8n-workflow-manager is a powerful CLI tool that helps you manage n8n workflows with proper version control, TypeScript support, and team collaboration features. It solves the common problems of:
@@ -179,8 +179,8 @@ Create `n8n-config.json` in your project root to customize behavior:
 
 ## 📁 Directory Structure
 
-![Directory Structure](./images/directory-structure.png)
-*Example: Organized workflow files after extraction*
+![Edit js files directly in your IDE](./images/Edit%20js%20files%20directly%20in%20your%20IDE.png)
+*Example: Edit workflow code directly in your IDE with syntax highlighting*
 
 After initialization, your project will have:
 
