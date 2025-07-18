@@ -1,0 +1,93 @@
+name: Release to npm
+
+on:
+  push:
+    branches: [prod]
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linting
+        run: npm run lint
+
+      - name: Run tests
+        run: npm test
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Get current version
+        id: current_version
+        run: echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Bump version
+        id: bump_version
+        run: |
+          # Check if this is the first automated commit
+          if git log --oneline -1 | grep -q "chore: bump version"; then
+            echo "Previous commit was version bump, incrementing patch"
+            npm version patch --no-git-tag-version
+          else
+            echo "Regular commit, incrementing patch"
+            npm version patch --no-git-tag-version
+          fi
+          echo "new_version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Commit version bump
+        run: |
+          git add package.json package-lock.json
+          git commit -m "chore: bump version to v${{ steps.bump_version.outputs.new_version }} [skip ci]" || echo "No changes to commit"
+
+      - name: Create Git tag
+        run: |
+          git tag "v${{ steps.bump_version.outputs.new_version }}"
+
+      - name: Push changes and tags
+        run: |
+          git push origin prod
+          git push origin "v${{ steps.bump_version.outputs.new_version }}"
+
+      - name: Publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "v${{ steps.bump_version.outputs.new_version }}"
+          release_name: "Release v${{ steps.bump_version.outputs.new_version }}"
+          body: |
+            ## Changes
+            
+            Auto-generated release for version ${{ steps.bump_version.outputs.new_version }}
+            
+            ### What's Changed
+            - Automatic version bump from ${{ steps.current_version.outputs.version }} to ${{ steps.bump_version.outputs.new_version }}
+            
+            **Full Changelog**: https://github.com/northfacejmb/n8n-workflow-manager/compare/v${{ steps.current_version.outputs.version }}...v${{ steps.bump_version.outputs.new_version }}
+          draft: false
+          prerelease: false 
