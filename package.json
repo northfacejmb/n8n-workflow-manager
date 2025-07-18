@@ -54,6 +54,7 @@
   "files": [
     "bin/",
     "lib/",
+    "images/",
     "README.md",
     "LICENSE"
   ],
