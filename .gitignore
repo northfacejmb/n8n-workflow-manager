@@ -1,0 +1,15 @@
+node_modules/
+*.log
+.env
+.env.*
+coverage/
+dist/
+build/
+.DS_Store
+*.tgz
+.nyc_output/
+lib-cov/
+
+# Test files
+test/fixtures/temp/
+test/fixtures/output/

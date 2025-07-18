@@ -1,0 +1,26 @@
+{
+  "workflowsDir": "workflows",
+  "n8nDir": "n8n",
+  "generateTypes": true,
+  "typeScript": {
+    "enabled": true,
+    "outputDir": "types"
+  },
+  "ignore": [
+    "node_modules",
+    ".git",
+    ".env",
+    ".env.*",
+    "*.log"
+  ],
+  "extraction": {
+    "preserveIds": true,
+    "generateIndex": true,
+    "splitCodeNodes": true
+  },
+  "packaging": {
+    "validateWorkflows": true,
+    "minifyOutput": false,
+    "backupOriginal": true
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "n8n-workflow-manager",
+  "version": "1.0.0",
+  "description": "Command-line tools for managing n8n workflows with version control and TypeScript support",
+  "main": "lib/index.js",
+  "bin": {
+    "n8n-workflow-manager": "bin/n8n-workflow-manager.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint lib bin",
+    "lint:fix": "eslint lib bin --fix",
+    "format": "prettier --write lib bin",
+    "prepublishOnly": "npm test && npm run lint"
+  },
+  "keywords": [
+    "n8n",
+    "workflow",
+    "automation",
+    "version-control",
+    "typescript",
+    "cli",
+    "parser",
+    "extract",
+    "package",
+    "workflow-management"
+  ],
+  "author": "Jeremy <jeremy@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeremypress/n8n-workflow-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jeremypress/n8n-workflow-manager/issues"
+  },
+  "homepage": "https://github.com/jeremypress/n8n-workflow-manager#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "inquirer": "^9.2.0",
+    "chalk": "^4.1.2",
+    "fs-extra": "^11.1.1"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
