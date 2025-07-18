@@ -1,0 +1,8 @@
+# Global code ownership
+# This ensures @northfacejmb must review and approve all changes
+* @northfacejmb
+
+# Critical files require extra protection  
+package.json @northfacejmb
+.github/workflows/* @northfacejmb
+DEPLOYMENT.md @northfacejmb 
