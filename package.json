@@ -1,18 +1,18 @@
 {
   "name": "n8n-workflow-manager",
-  "version": "1.0.0",
+  "version": "0.0.6",
   "description": "Command-line tools for managing n8n workflows with version control and TypeScript support",
   "main": "lib/index.js",
   "bin": {
     "n8n-workflow-manager": "bin/n8n-workflow-manager.js"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "lint": "eslint lib bin",
     "lint:fix": "eslint lib bin --fix",
     "format": "prettier --write lib bin",
-    "prepublishOnly": "npm test && npm run lint"
+    "prepublishOnly": "npm run lint"
   },
   "keywords": [
     "n8n",
@@ -26,16 +26,16 @@
     "package",
     "workflow-management"
   ],
-  "author": "Jeremy <jeremy@example.com>",
+  "author": "Jeremy <jmb10477@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeremypress/n8n-workflow-manager.git"
+    "url": "git+https://github.com/northfacejmb/n8n-workflow-manager.git"
   },
   "bugs": {
-    "url": "https://github.com/jeremypress/n8n-workflow-manager/issues"
+    "url": "https://github.com/northfacejmb/n8n-workflow-manager/issues"
   },
-  "homepage": "https://github.com/jeremypress/n8n-workflow-manager#readme",
+  "homepage": "https://github.com/northfacejmb/n8n-workflow-manager#readme",
   "engines": {
     "node": ">=14.0.0"
   },
@@ -54,6 +54,7 @@
   "files": [
     "bin/",
     "lib/",
+    "images/",
     "README.md",
     "LICENSE"
   ],

@@ -3,7 +3,11 @@
 > Command-line tools for managing n8n workflows with version control and TypeScript support
 
 [![npm version](https://img.shields.io/npm/v/n8n-workflow-manager.svg)](https://www.npmjs.com/package/n8n-workflow-manager)
+[![npm downloads](https://img.shields.io/npm/dm/n8n-workflow-manager.svg)](https://www.npmjs.com/package/n8n-workflow-manager)
+[![GitHub](https://img.shields.io/badge/GitHub-n8n--workflow--manager-blue?logo=github)](https://github.com/northfacejmb/n8n-workflow-manager)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub issues](https://img.shields.io/github/issues/northfacejmb/n8n-workflow-manager)](https://github.com/northfacejmb/n8n-workflow-manager/issues)
+[![GitHub stars](https://img.shields.io/github/stars/northfacejmb/n8n-workflow-manager)](https://github.com/northfacejmb/n8n-workflow-manager/stargazers)
 
 ## 🚀 Quick Start
 
@@ -33,6 +37,9 @@ npx n8n-workflow-manager types
 ```
 
 ## 📖 What is n8n-workflow-manager?
+
+![Split nodes into their own files](./images/Split%20nodes%20into%20their%20own%20files.png)
+*Example: Splitting an n8n workflow into organized files*
 
 n8n-workflow-manager is a powerful CLI tool that helps you manage n8n workflows with proper version control, TypeScript support, and team collaboration features. It solves the common problems of:
 
@@ -172,6 +179,9 @@ Create `n8n-config.json` in your project root to customize behavior:
 
 ## 📁 Directory Structure
 
+![Edit js files directly in your IDE](./images/Edit%20js%20files%20directly%20in%20your%20IDE.png)
+*Example: Edit workflow code directly in your IDE with syntax highlighting*
+
 After initialization, your project will have:
 
 ```
@@ -297,9 +307,40 @@ jobs:
         run: npx tsc --noEmit
 ```
 
+## 🛠 Development
+
+To contribute to this project:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/northfacejmb/n8n-workflow-manager.git
+   cd n8n-workflow-manager
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run linting:**
+   ```bash
+   npm run lint
+   ```
+
+4. **Test your changes:**
+   ```bash
+   npm test
+   ```
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+**Quick ways to contribute:**
+- 🐛 [Report bugs](https://github.com/northfacejmb/n8n-workflow-manager/issues/new?labels=bug)
+- 💡 [Request features](https://github.com/northfacejmb/n8n-workflow-manager/issues/new?labels=enhancement)
+- 📖 Improve documentation
+- 🔧 Submit pull requests
 
 ## 📄 License
 
@@ -307,10 +348,10 @@ MIT © [Jeremy Press](https://github.com/jeremypress)
 
 ## 🔗 Links
 
-- [GitHub Repository](https://github.com/jeremypress/n8n-workflow-manager)
-- [npm Package](https://www.npmjs.com/package/n8n-workflow-manager)
-- [Issue Tracker](https://github.com/jeremypress/n8n-workflow-manager/issues)
-- [n8n Documentation](https://docs.n8n.io/)
+- 📦 **[npm Package](https://www.npmjs.com/package/n8n-workflow-manager)** - Install and use the CLI tool
+- 🐙 **[GitHub Repository](https://github.com/northfacejmb/n8n-workflow-manager)** - Source code and development
+- 🐛 **[Issue Tracker](https://github.com/northfacejmb/n8n-workflow-manager/issues)** - Report bugs and request features
+- 📚 **[n8n Documentation](https://docs.n8n.io/)** - Learn about n8n workflows
 
 ---
 
